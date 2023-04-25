@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import { Add, Remove } from "@mui/icons-material";
 import { shades } from "../theme";
 import { addToCart } from "../state";
 import { useNavigate } from "react-router-dom";
@@ -38,12 +37,12 @@ const Item = ({ item, width }) => {
           alt={item.name}
           width="300px"
           height="400px"
-          src={`${process.env.REACT_APP_API_URL}${url}`}
+          src={`${process.env.REACT_APP_BASE_URL}${url}`}
           onClick={() => navigate(`/item/${item.id}`)}
           style={{ cursor: "pointer" }}
         />
         <Box
-          display={isHovered ? "blocked" : "none"}
+          display={isHovered ? "block" : "none"}
           position="absolute"
           bottom="10%"
           left="0"
@@ -58,11 +57,11 @@ const Item = ({ item, width }) => {
               borderRadius="3px"
             >
               <IconButton onClick={() => setCount(Math.max(count - 1, 1))}>
-                <RemoveIcon />
+                <Remove />
               </IconButton>
               <Typography>{count}</Typography>
               <IconButton onClick={() => setCount(Math.max(count + 1, 1))}>
-                <AddIcon />
+                <Add />
               </IconButton>
             </Box>
             <Button

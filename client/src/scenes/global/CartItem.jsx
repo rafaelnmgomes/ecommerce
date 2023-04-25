@@ -3,9 +3,7 @@ import { Box, Divider, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { decreaseCount, increaseCount, removeFromCart } from "../../state";
-import CloseIcon from "@mui/icons-material/Close";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import { Close, Add, Remove } from "@mui/icons-material";
 import { shades } from "../../theme";
 
 const FlexBox = styled(Box)`
@@ -33,7 +31,7 @@ const CartItem = ({ item }) => {
             <IconButton
               onClick={() => dispatch(removeFromCart({ id: item.id }))}
             >
-              <CloseIcon />
+              <Close />
             </IconButton>
           </FlexBox>
           <Typography>{item.attributes.shortDescription}</Typography>
@@ -46,13 +44,13 @@ const CartItem = ({ item }) => {
               <IconButton
                 onClick={() => dispatch(decreaseCount({ id: item.id }))}
               >
-                <RemoveIcon />
+                <Remove />
               </IconButton>
               <Typography>{item.count}</Typography>
               <IconButton
                 onClick={() => dispatch(increaseCount({ id: item.id }))}
               >
-                <AddIcon />
+                <Add />
               </IconButton>
             </Box>
             <Typography fontWeight="bold">{item.attributes.price}</Typography>
