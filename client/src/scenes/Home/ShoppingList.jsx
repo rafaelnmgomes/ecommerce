@@ -19,7 +19,12 @@ const ShoppingList = () => {
       `${process.env.REACT_APP_BASE_URL}/api/items?populate=image`,
       { method: "GET" }
     );
+    console.log(
+      "🚀 ~ file: ShoppingList.jsx:22 ~ fetchItems ~ response:",
+      response
+    );
     const items = await response.json();
+    console.log("🚀 ~ file: ShoppingList.jsx:27 ~ fetchItems ~ items:", items);
     dispatch(setItems(items.data));
   }
 
