@@ -31,11 +31,7 @@ const ShoppingList = () => {
   useEffect(() => {
     fetchItems();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [items]);
-
-  if (!items) {
-    return <div>Loading</div>;
-  }
+  }, []);
 
   const topRatedItems = items.filter(
     (item) => item.attributes.category === "topRated"
