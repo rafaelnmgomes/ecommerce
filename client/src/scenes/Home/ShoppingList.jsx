@@ -28,9 +28,9 @@ const ShoppingList = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!items) {
-    return <div>Loading</div>;
-  }
+  // if (!items) {
+  //   return <div>Loading</div>;
+  // }
 
   const topRatedItems = items.filter(
     (item) => item.attributes.category === "topRated"
