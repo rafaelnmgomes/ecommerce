@@ -18,7 +18,7 @@ const Subscribe = () => {
         p="2px 4px"
         m="15px auto"
         display="flex"
-        alinItems="center"
+        alignItems="center"
         width="75%"
         backgroundColor="#F2F2F2"
       >

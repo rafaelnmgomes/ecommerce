@@ -52,8 +52,8 @@ const CartMenu = () => {
             </IconButton>
           </FlexBox>
           <Box>
-            {cart.map((item) => (
-              <CartItem item={item} />
+            {cart.map((item, index) => (
+              <CartItem key={`${item?.name}-${index}`} item={item} />
             ))}
             <Box m="20px 0">
               <FlexBox m="20px 0">
